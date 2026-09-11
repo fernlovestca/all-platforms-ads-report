@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ads Summary ก.ย. 69</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --navy:#1F3864; --navy2:#2E5496; --ink:#1A2333; --ink2:#4A5563; --mut:#6F7A88;
+  --line:#DDE4EE; --line2:#EDF1F7; --bg:#F4F6FA; --card:#FFFFFF; --soft:#F7F9FD;
+  --shopee:#2E5496; --tiktok:#0E7C86; --wpc:#6A4FBF; --iglk:#B0593A; --igat:#76593D;
+  --good:#2E9E5B; --warn:#B4791C; --bad:#C0392B; --neu:#5E6B7C;
+  --goodbg:#E9F6EF; --warnbg:#FDF4E3; --badbg:#FCECEA; --neubg:#EEF1F5;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans Thai","Noto Sans Thai",Tahoma,system-ui,sans-serif;font-size:14.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.page{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2{text-wrap:balance}
+
+header{background:linear-gradient(135deg,var(--navy) 0%,#16294A 100%);color:#fff;border-radius:0 0 18px 18px;padding:30px 34px 28px;margin-bottom:20px}
+.brand{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#9DB3D6;margin-bottom:9px}
+header h1{margin:0;font-size:27px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+header .lead{margin:13px 0 0;font-size:15px;color:#D6E1F2;max-width:76ch;line-height:1.7}
+header .lead b{color:#fff;font-weight:600}
+.periods{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.periods span{font-size:11.5px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:3px 11px;color:#CFDCF0}
+.periods span.off{background:transparent;border-style:dashed;color:#AFC0DA}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px 17px}
+.kpi .l{font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--mut);text-transform:uppercase}
+.kpi .v{font-size:27px;font-weight:700;letter-spacing:-.02em;margin:5px 0 2px;color:var(--navy)}
+.kpi .v small{font-size:14px;font-weight:600;color:var(--mut);margin-left:2px}
+.kpi .s{font-size:12px;color:var(--ink2)}
+.kpi.hl{background:#EEF3FB;border-color:#C9D8EE}
+.kpi.hl .v{color:var(--good)}
+.kpi.plan{border-style:dashed;border-color:#B9C7DC}
+
+section{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:22px 24px;margin-bottom:16px}
+h2{margin:0 0 3px;font-size:17px;font-weight:700;letter-spacing:-.005em;color:var(--ink)}
+.sub{margin:0 0 16px;font-size:12.5px;color:var(--mut)}
+
+.mbar{display:flex;height:38px;border-radius:9px;overflow:hidden;margin-bottom:12px}
+.mbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden}
+.mkey{display:flex;flex-wrap:wrap;gap:6px 24px;font-size:13px;color:var(--ink2)}
+.mkey span{display:flex;align-items:center;gap:8px}
+.mkey i{width:11px;height:11px;border-radius:3px;flex:none}
+.mkey b{color:var(--ink);font-weight:600}
+.note{margin-top:14px;background:#EEF3FB;border-left:4px solid var(--navy2);border-radius:9px;padding:12px 15px;font-size:13px;color:var(--ink2)}
+.note b{color:var(--ink)}
+
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line2);vertical-align:top}
+th:first-child,td:first-child{text-align:left}
+th.l,td.l{text-align:left}
+thead th{background:var(--soft);color:var(--ink2);font-size:12px;font-weight:600;border-bottom:1.5px solid var(--line);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tr.total td{background:var(--soft);font-weight:700;border-top:1.5px solid var(--line)}
+tr.off td{background:#FCF3F2;color:#8E4A42}
+tr.gh td{background:#E9EFF9;color:var(--navy);font-weight:700;font-size:12.5px;padding:8px 10px}
+tr.gh td .bd{float:right;color:var(--navy2)}
+tr.gh td .ty{font-weight:500;color:var(--mut)}
+.tw{overflow-x:auto}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:20px;white-space:nowrap;margin:0 0 4px 4px}
+.pill.g{background:var(--goodbg);color:var(--good)}
+.pill.w{background:var(--warnbg);color:var(--warn)}
+.pill.b{background:var(--badbg);color:var(--bad)}
+.pill.n{background:var(--neubg);color:var(--neu)}
+.tag{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:5px;background:#F0DCDA;color:var(--bad);margin-left:6px}
+.tag.new{background:#FBF0DA;color:#96661A}
+td .nm{font-weight:600;color:var(--ink)}
+td .sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:1px}
+td .dt{font-size:11.5px;color:var(--mut);display:block;margin-top:1px}
+.dn{font-size:11.5px;color:var(--mut);display:block;margin-top:1px;font-weight:400}
+.muted{color:var(--mut)}
+
+.more{display:inline-flex;align-items:center;gap:4px;margin-top:6px;font-size:12px;font-weight:500;color:var(--navy2);
+  background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
+.more::before{content:"›";font-size:14px;line-height:1;transition:transform .15s;display:inline-block}
+.more[aria-expanded="true"]::before{transform:rotate(90deg)}
+.more:hover{text-decoration:underline}
+.more:focus-visible,input[type=range]:focus-visible{outline:2px solid var(--navy2);outline-offset:3px;border-radius:4px}
+tr.drow > td{background:#FBFCFE;padding:0 12px 16px;border-bottom:1px solid var(--line2)}
+.dbody{white-space:normal}
+.dbody h5{margin:14px 0 6px;font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:.03em}
+.dbody h5:first-child{margin-top:4px}
+.dbody table{font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.dbody th,.dbody td{padding:7px 10px}
+.dbody .cap{font-size:11.5px;color:var(--mut);margin:8px 0 0;line-height:1.65}
+.dbody .cap b{color:var(--ink);font-weight:600}
+
+/* pacing tool */
+.pace{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line)}
+.pace .ph{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pace .pt{font-size:14px;font-weight:700;color:var(--ink)}
+.pace .pv{font-size:13px;color:var(--ink2)}
+.pace .pv b{font-size:18px;color:var(--navy)}
+.pace input[type=range]{width:100%;margin:10px 0 4px;accent-color:var(--shopee)}
+.scale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut)}
+.tl{position:relative;height:30px;background:var(--line2);border-radius:7px;margin-top:12px;overflow:hidden}
+.tl .fill{position:absolute;left:0;top:0;bottom:0;background:var(--shopee);border-radius:7px 0 0 7px;transition:width .25s}
+.tl .fill.full{background:var(--good);border-radius:7px}
+.tl .lbl{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#fff;font-size:12px;font-weight:600;white-space:nowrap}
+.tlx{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin-top:4px}
+.pres{margin-top:10px;font-size:13px;border-radius:9px;padding:10px 14px}
+.pres.w{background:var(--warnbg);color:#6E5510}
+.pres.g{background:var(--goodbg);color:#205C39}
+.pres b{font-weight:700}
+
+/* platform cards */
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.pc{border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.pc.wide{grid-column:span 2}
+.pc.wide .pb{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.pc .ph{padding:11px 15px;color:#fff}
+.pc .ph .n{font-size:14.5px;font-weight:700}
+.pc .ph .m{font-size:11.5px;opacity:.88}
+.pc .pb{padding:13px 15px}
+.pc h4{margin:0 0 5px;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.pc h4.g{color:var(--good)} .pc h4.b{color:var(--bad)} .pc h4.n{color:var(--neu)}
+.pc ul{margin:0 0 13px;padding-left:16px;font-size:12.8px;color:var(--ink2);line-height:1.6}
+.pc li{margin-bottom:4px}
+.pc .pb > div > ul:last-child,.pc .pb > ul:last-child{margin-bottom:0}
+
+.find{display:grid;grid-template-columns:auto 1fr;gap:13px;padding:13px 0;border-bottom:1px solid var(--line2)}
+.find:last-child{border-bottom:0;padding-bottom:0}
+.find .n{width:26px;height:26px;border-radius:8px;background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.find .t{font-size:14.5px;font-weight:600;margin-bottom:2px;color:var(--ink)}
+.find .d{font-size:13px;color:var(--ink2)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.box{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.box.gd{background:var(--goodbg);border-color:#BFE3CE}
+.box.wr{background:var(--warnbg);border-color:#EDD9AE}
+.box .bt{font-size:13px;font-weight:700;margin-bottom:7px}
+.box.gd .bt{color:var(--good)} .box.wr .bt{color:var(--warn)}
+.box ul{margin:0;padding-left:17px;font-size:12.8px;color:var(--ink2);line-height:1.65}
+.box li{margin-bottom:4px}
+
+section.dec{border:1.5px solid #E3C9A0;background:#FFFBF4}
+section.dec h2{color:#8A5A12}
+section.dec thead th{background:#FBF0DC;border-bottom-color:#E3C9A0}
+section.dec table td{border-bottom-color:#F1E3CA;font-size:12.8px}
+.own{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;background:#EEF3FB;color:var(--navy2);margin-bottom:4px;white-space:nowrap}
+.due{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;background:#FBF0DC;color:#8A5A12;white-space:nowrap}
+.sy b{color:var(--ink);font-weight:600}
+
+footer{font-size:11.5px;color:var(--mut);line-height:1.7;padding:4px 4px 0}
+footer b{color:var(--ink2)}
+
+@media (max-width:860px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .pcards{grid-template-columns:1fr}
+  .pc.wide{grid-column:auto}
+  .pc.wide .pb{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  header{padding:24px 20px}
+  header h1{font-size:22px}
+  section{padding:18px 16px}
+}
+@media (max-width:440px){.kpi .v{font-size:23px}}
+@media (prefers-reduced-motion:reduce){.tl .fill,.more::before{transition:none}}
+@media print{
+  body{background:#fff;font-size:10.5px}
+  .page{max-width:100%;padding:0}
+  header{border-radius:0;padding:18px 20px}
+  section{break-inside:avoid;page-break-inside:avoid;margin-bottom:10px;padding:14px 16px}
+  .kpi .v{font-size:20px}
+  .more{display:none}
+  tr.drow{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:10mm}
+}
+</style>
+</head>
+<body>
+
+
+<div class="page">
+
+<header>
+  <div class="brand">LUCK Thailand · ATELIER · WPC · รายงานสรุปโฆษณา</div>
+  <h1>สรุปผลการยิงโฆษณา &amp; แผนเดือนกันยายน 2569</h1>
+  <p class="lead">ช่วง 26 ส.ค. – 8 ก.ย. Shopee ใช้ค่าโฆษณา <b>฿6,057</b> สร้างยอดขายจากแอด <b>฿35,767</b> คิดเป็น <b>ROAS 5.91</b> ก่อนแอดหยุดเมื่อเครดิตหมด 5 ก.ย. · ตั้งแต่ <b>11 ก.ย.</b> เปิดรอบใหม่ วางงบไว้ <b>฿27,000</b> — Shopee ฿15,000 และ IG 2 บัญชี ฿12,000 · TikTok หยุดพักเพื่อแก้การ์ดสินค้า · Website WPC รันต่อจากเดือน ส.ค.</p>
+  <div class="periods">
+    <span>Shopee ผล 26 ส.ค. – 8 ก.ย. (วีค 1+2)</span>
+    <span>Shopee แผน 11 ก.ย. – 11 ต.ค. (31 วัน)</span>
+    <span>IG LUCK · ATELIER 11 – 30 ก.ย. (20 วัน)</span>
+    <span class="off">TikTok หยุดพักชั่วคราว</span>
+    <span class="off">Website WPC รันต่อจาก ส.ค.</span>
+    <span>ข้อมูล ณ 11 ก.ย. 2569</span>
+  </div>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><div class="l">ค่าโฆษณา Shopee</div><div class="v num">6,057<small>.00 ฿</small></div><div class="s">แอดทำงาน 11 จาก 14 วัน</div></div>
+  <div class="kpi"><div class="l">ยอดขายจากแอด</div><div class="v num">35,767<small> ฿</small></div><div class="s">33 การสั่งซื้อ · ทางตรง 22</div></div>
+  <div class="kpi hl"><div class="l">ROAS · Shopee</div><div class="v num">5.91</div><div class="s">ทุก ฿1 ที่จ่าย ได้กลับ ฿5.91</div></div>
+  <div class="kpi plan"><div class="l">งบที่วางแผน ก.ย.</div><div class="v num">27,000<small> ฿</small></div><div class="s">Shopee 15,000 · IG 12,000</div></div>
+</div>
+
+<section>
+  <h2>ผลรายแพลตฟอร์ม &amp; แผนเดือนกันยายน</h2>
+  <p class="sub">Shopee มีผลจริงแล้ว 2 สัปดาห์ · IG เริ่มยิงวันนี้จึงแสดงเป็นแผน · TikTok และ Website WPC ใช้ผลเดือน ส.ค. เป็นตัวอ้างอิง · กด “ดูรายละเอียด” เพื่อเจาะรายสินค้า / รายโพสต์</p>
+  <div class="tw">
+  <table>
+    <thead><tr><th>แพลตฟอร์ม</th><th>ผลช่วงที่ผ่านมา</th><th>แผน / งบเดือน ก.ย.</th><th>สถานะ</th></tr></thead>
+    <tbody>
+
+      <!-- SHOPEE -->
+      <tr>
+        <td>
+          <span class="nm"><i class="sw" style="background:var(--shopee)"></i>Shopee LUCK</span>
+          <span class="dt">GMV Max · ผล 26 ส.ค. – 8 ก.ย.</span>
+          <button type="button" class="more" id="btn-shopee" aria-expanded="false" data-t="d-shopee">ดูรายละเอียด</button>
+        </td>
+        <td>ยอดขาย 35,767 ฿<span class="dn">ค่าแอด 6,057.00 ฿ · 33 การสั่งซื้อ</span></td>
+        <td>วงเงิน 15,000 ฿<span class="dn">2 กลุ่ม + 2 รายสินค้า · เพดาน ฿1,200/วัน</span></td>
+        <td><span class="pill g">คุ้ม · ROAS 5.91</span><br><span class="pill w">เริ่มรอบใหม่ 11 ก.ย.</span></td>
+      </tr>
+      <tr class="drow" id="d-shopee" hidden>
+        <td colspan="4">
+          <div class="dbody">
+            <h5>เทียบวีค 1 · วีค 2 · รวม 2 สัปดาห์</h5>
+            <div class="tw">
+            <table>
+              <thead><tr><th>ตัวชี้วัด</th><th>วีค 1 · 26 ส.ค.–1 ก.ย.</th><th>วีค 2 · 2–8 ก.ย.</th><th>รวม</th></tr></thead>
+              <tbody>
+                <tr><td>วันที่แอดทำงาน</td><td>7</td><td>4</td><td>11</td></tr>
+                <tr><td>ค่าแอด</td><td>4,132.76</td><td>1,924.24</td><td>6,057.00</td></tr>
+                <tr><td>ยอดขายจากแอด</td><td>26,122</td><td>9,645</td><td>35,767</td></tr>
+                <tr><td>ROAS</td><td style="color:var(--good)">6.32</td><td style="color:var(--warn)">5.01</td><td>5.91</td></tr>
+                <tr><td>Direct ROAS</td><td style="color:var(--warn)">5.70</td><td style="color:var(--bad)">1.42</td><td>4.34</td></tr>
+                <tr><td>การสั่งซื้อ (ทางตรง)</td><td>23 (20)</td><td>10 (2)</td><td>33 (22)</td></tr>
+                <tr><td>การมองเห็น · คลิก · CTR</td><td>27,940 · 1,027 · 3.68%</td><td>10,942 · 431 · 3.94%</td><td>38,882 · 1,458 · 3.75%</td></tr>
+                <tr><td>ยอดขายทั้งร้าน · ออเดอร์</td><td>30,043 · 20</td><td>17,490 · 9</td><td>47,533 · 29</td></tr>
+                <tr class="total"><td>ยอดขายจากแอดต่อวันที่แอดทำงาน</td><td>3,732</td><td>2,411</td><td>3,252</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="cap">วีค 2 แอดทำงานได้แค่ 4 วันเพราะเครดิตหมดระหว่างวันที่ 5 ก.ย. · หลังแอดหยุดยังมียอดตามมาอีก <b>฿2,512 ในวัน 9.9</b> (Shopee นับยอดภายใน 7 วันหลังคลิก บันทึกตามวันที่สั่งซื้อ) ยอดนี้ไม่ได้รวมในตาราง ถ้ารวม ผลตอบแทนจริงของค่าแอด ฿6,057 จะเป็น ฿38,279 (ROAS 6.32)</p>
+
+            <h5>สินค้า 9 รายการในกลุ่มผ้าขนหนู — เรียงจาก ROAS สูงสุด</h5>
+            <div class="tw">
+            <table>
+              <thead><tr><th>สินค้า</th><th>ค่าแอด</th><th>สัดส่วนงบ</th><th>ยอดขาย</th><th>ROAS</th><th>Direct ROAS</th><th>การสั่งซื้อ</th><th>CTR</th></tr></thead>
+              <tbody>
+                <tr><td>Feline</td><td>1,120.57</td><td>18.5%</td><td>9,629</td><td style="color:var(--good)">8.59</td><td style="color:var(--bad)">2.34</td><td>10</td><td>2.97%</td></tr>
+                <tr><td>Grounded Grace</td><td>300.10</td><td>5.0%</td><td>2,309</td><td style="color:var(--good)">7.69</td><td style="color:var(--good)">7.69</td><td>2</td><td>3.34%</td></tr>
+                <tr><td>Gataway</td><td>2,242.72</td><td>37.0%</td><td>14,946</td><td style="color:var(--good)">6.66</td><td style="color:var(--warn)">6.18</td><td>10</td><td>3.91%</td></tr>
+                <tr><td>Calm</td><td>196.20</td><td>3.2%</td><td>1,031</td><td style="color:var(--warn)">5.25</td><td style="color:var(--bad)">3.01</td><td>2</td><td>3.85%</td></tr>
+                <tr><td>Terrazzo</td><td>1,089.84</td><td>18.0%</td><td>5,603</td><td style="color:var(--warn)">5.14</td><td style="color:var(--warn)">4.27</td><td>7</td><td>4.37%</td></tr>
+                <tr><td>Splash Joy</td><td>454.46</td><td>7.5%</td><td>2,249</td><td style="color:var(--warn)">4.95</td><td style="color:var(--warn)">4.95</td><td>2</td><td>3.19%</td></tr>
+                <tr class="off"><td>Luxe Haven<span class="tag">ลบแล้ว 2 ก.ย.</span></td><td>282.07</td><td>4.7%</td><td>0</td><td>0.00</td><td>0.00</td><td>0</td><td>4.77%</td></tr>
+                <tr class="off"><td>Matha’s Favorite<span class="tag">ลบแล้ว 2 ก.ย.</span></td><td>221.25</td><td>3.7%</td><td>0</td><td>0.00</td><td>0.00</td><td>0</td><td>4.07%</td></tr>
+                <tr class="off"><td>Four Elements<span class="tag">ลบแล้ว 2 ก.ย.</span></td><td>149.79</td><td>2.5%</td><td>0</td><td>0.00</td><td>0.00</td><td>0</td><td>2.28%</td></tr>
+                <tr class="total"><td>รวมทั้งกลุ่ม</td><td>6,057.00</td><td>100%</td><td>35,767</td><td>5.91</td><td>4.34</td><td>33</td><td>3.75%</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="cap"><b>Gataway เป็นตัวหลัก</b> ได้งบ 37% ทำยอด ฿14,946 เกือบทั้งหมดเป็นยอดทางตรง (Direct ROAS 6.18) · <b>Grounded Grace แข็งจริง</b> ที่ 7.69 ทั้งสองค่า แต่ได้งบแค่ 5% · <b>Feline ROAS สูงสุด 8.59 แต่ Direct ROAS แค่ 2.34</b> เพราะคนคลิก Feline แล้วไปซื้อตัวอื่น · หลังลบ 3 ตัวล่าง ระบบเทงบวีค 2 ให้ Feline 35.6% ทำให้ Direct ROAS รวมของวีค 2 ตกเหลือ 1.42</p>
+
+            <h5>แผนยิงแอด 11 ก.ย. – 11 ต.ค. 2569 · 12 สินค้า · วงเงิน ฿15,000</h5>
+            <div class="tw">
+            <table>
+              <thead><tr><th>สินค้า</th><th class="l">ผลแอดที่ผ่านมา</th><th>ยอดขายในร้าน 1 ส.ค.–8 ก.ย.</th></tr></thead>
+              <tbody>
+                <tr class="gh"><td colspan="3">กลุ่ม 1 · ผ้าขนหนู <span class="ty">· กลุ่มโฆษณา</span><span class="bd">฿500/วัน</span></td></tr>
+                <tr><td>Gataway</td><td class="l">ในกลุ่ม: ROAS 6.66 · Direct 6.18 · 10 การสั่งซื้อ</td><td>19,573 · 14 ออเดอร์</td></tr>
+                <tr><td>Matha’s Favorite</td><td class="l">รอบนี้: ค่าแอด ฿221 ไม่มียอด · ก.ค. รายสินค้า ROAS 12.37</td><td>9,617 · 7 ออเดอร์</td></tr>
+                <tr><td>Luxe Haven</td><td class="l">รอบนี้: ค่าแอด ฿282 ไม่มียอด</td><td>7,888 · 6 ออเดอร์</td></tr>
+                <tr><td>Splash Joy</td><td class="l">ในกลุ่ม: ROAS 4.95 · Direct 4.95 · 2 การสั่งซื้อ</td><td>8,319 · 6 ออเดอร์</td></tr>
+                <tr><td>Terrazzo</td><td class="l">ในกลุ่ม: ROAS 5.14 · Direct 4.27 · 7 การสั่งซื้อ</td><td>14,179 · 14 ออเดอร์</td></tr>
+                <tr class="gh"><td colspan="3">กลุ่ม 2 · สินค้าเด็ก <span class="ty">· กลุ่มโฆษณา</span><span class="bd">฿500/วัน</span></td></tr>
+                <tr><td>ผ้ากันเปื้อน Bib<span class="tag new">ใหม่</span></td><td class="l">ยังไม่เคยยิงแอด</td><td class="muted">ไม่มียอดขาย</td></tr>
+                <tr><td>เซตของขวัญเครื่องนอนเด็กแรกเกิด<span class="tag new">ใหม่</span></td><td class="l">ยังไม่เคยยิงแอด</td><td class="muted">ไม่มียอดขาย</td></tr>
+                <tr><td>ผ้าห่มลายสัตว์ Circus<span class="tag new">ใหม่</span></td><td class="l">ยังไม่เคยยิงแอด</td><td>1,050 · 1 ออเดอร์</td></tr>
+                <tr><td>ผ้าอ้อม/ผ้าห่มเอนกประสงค์ Lullaby<span class="tag new">ใหม่</span></td><td class="l">ยังไม่เคยยิงแอด</td><td>350 · 1 ออเดอร์</td></tr>
+                <tr><td>ถุงเท้ากันลื่น หัดเดิน Big Bow<span class="tag new">ใหม่</span></td><td class="l">ยังไม่เคยยิงแอด</td><td class="muted">ไม่มียอดขาย</td></tr>
+                <tr class="gh"><td colspan="3">แอดรายสินค้า <span class="ty">· ยิงแยกทีละสินค้า</span><span class="bd">฿100/วัน ต่อสินค้า</span></td></tr>
+                <tr><td>Swift Wrap</td><td class="l">ก.ค. รายสินค้า: ROAS 6.39 · Direct 5.63 · 20 การสั่งซื้อ</td><td>11,192 · 12 ออเดอร์</td></tr>
+                <tr><td>Gataway FAMILY SET<span class="tag new">ใหม่</span></td><td class="l">ยังไม่เคยยิงแอด</td><td class="muted">ยังไม่มียอดสำเร็จ</td></tr>
+                <tr class="total"><td>รวมเพดานงบต่อวัน</td><td class="l">500 + 500 + 100 + 100</td><td>฿1,200/วัน</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="cap">ยอดขายในร้านรวมยอดจากทุกช่องทางของสินค้านั้น ไม่ได้มาจากแอดทั้งหมด · Feline, Grounded Grace และ Calm ไม่ได้อยู่ในแผนรอบนี้ · ตั้งวันสิ้นสุดทุกแอดเป็น 11 ต.ค.</p>
+          </div>
+        </td>
+      </tr>
+
+      <!-- IG LUCK -->
+      <tr>
+        <td>
+          <span class="nm"><i class="sw" style="background:var(--iglk)"></i>IG LUCK</span>
+          <span class="dt">luck_th.official · Traffic · 3 โพสต์ · ปลายทางเว็บไซต์</span>
+          <button type="button" class="more" id="btn-iglk" aria-expanded="false" data-t="d-iglk">ดูรายละเอียด</button>
+        </td>
+        <td class="muted">ยังไม่เคยยิงแอด<span class="dn">คัดจากโพสต์ออแกนิก 8 พ.ค. – 5 ส.ค.</span></td>
+        <td>฿300/วัน · 6,000 ฿<span class="dn">3 ชุดโฆษณา ชุดละ ฿100 · 20 วัน</span></td>
+        <td><span class="pill w">เริ่มยิง 11 ก.ย.</span></td>
+      </tr>
+      <tr class="drow" id="d-iglk" hidden>
+        <td colspan="4">
+          <div class="dbody">
+            <h5>3 ชุดโฆษณา · ชุดละ 1 โพสต์ · ฿100/วัน เท่ากันทุกชุด</h5>
+            <div class="tw">
+            <table>
+              <thead><tr><th>โพสต์</th><th>Reach</th><th>Shares</th><th>Saves</th><th class="l">กลุ่มเป้าหมาย</th><th>งบ/วัน</th><th>20 วัน</th></tr></thead>
+              <tbody>
+                <tr><td>IntelliTime<span class="dn">“ใช้ผ้าเช็ดตัวเกิน 3 วัน สกปรกเหมือนโถส้วม!”</span></td><td>2,178</td><td style="color:var(--good);font-weight:600">48</td><td>10</td><td class="l">กทม. · หญิง 30–44 · สุขอนามัยในบ้าน, Home care</td><td>100</td><td>2,000</td></tr>
+                <tr><td>Terrazzo Edition<span class="dn">“ห้องน้ำที่ดีไม่ต้องใหญ่”</span></td><td>1,877</td><td>2</td><td style="color:var(--good);font-weight:600">27</td><td class="l">กทม. · หญิง 30–45 · แต่งบ้าน/คอนโด, Bathroom decor</td><td>100</td><td>2,000</td></tr>
+                <tr><td>Swift Wrap<span class="dn">“35% ของเวลาตอนเช้าหมดไปกับการเป่าผม”</span></td><td>661</td><td>2</td><td>8</td><td class="l">กทม. · หญิงวัยทำงาน 25–44 · Hair care, Morning routine</td><td>100</td><td>2,000</td></tr>
+                <tr class="total"><td>รวม IG LUCK</td><td>—</td><td>—</td><td>—</td><td class="l">ปลายทาง เว็บไซต์อย่างเดียว</td><td>300</td><td>6,000</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="cap"><b>ปรับจากแผนเดิม</b> ชุด 1 ฿200 (IntelliTime + Terrazzo) + ชุด 2 ฿100 (Swift Wrap) → <b>แยก 3 ชุด ชุดละ ฿100</b> งบรวมเท่าเดิม ฿300/วัน · ข้อดีคือทุกโพสต์ได้งบแน่นอน ระบบไม่เทงบไปโพสต์เดียว และเทียบ CTR / ต้นทุนต่อคลิกระหว่าง 3 สินค้าได้ตรง · Meta อาจใช้เกินงบรายวันได้บางวัน แต่รวมทั้งสัปดาห์ไม่เกิน 7 เท่า (≤ ฿700/ชุด/สัปดาห์) · ตัวเลข Reach/Shares/Saves เป็นผลออแกนิก ไม่ใช่ผลจากแอด</p>
+          </div>
+        </td>
+      </tr>
+
+      <!-- IG ATELIER -->
+      <tr>
+        <td>
+          <span class="nm"><i class="sw" style="background:var(--igat)"></i>IG ATELIER</span>
+          <span class="dt">atelier.th · Traffic · 3 โพสต์ · 2 พื้นที่ · ปลายทางเว็บไซต์</span>
+          <button type="button" class="more" id="btn-igat" aria-expanded="false" data-t="d-igat">ดูรายละเอียด</button>
+        </td>
+        <td class="muted">ยังไม่เคยยิงแอด<span class="dn">คัดจากโพสต์ออแกนิก 86 โพสต์ + โพสต์ใหม่ 19 ส.ค.</span></td>
+        <td>฿300/วัน · 6,000 ฿<span class="dn">กทม. ฿150 + ภูเก็ต ฿150 · 20 วัน</span></td>
+        <td><span class="pill w">เริ่มยิง 11 ก.ย.</span></td>
+      </tr>
+      <tr class="drow" id="d-igat" hidden>
+        <td colspan="4">
+          <div class="dbody">
+            <h5>2 ชุดโฆษณา แยกตามพื้นที่ · แต่ละชุดใช้ 3 โพสต์เดียวกัน</h5>
+            <div class="tw">
+            <table>
+              <thead><tr><th>ชุดโฆษณา</th><th class="l">เหตุผลที่แยก</th><th>งบ/วัน</th><th>20 วัน</th></tr></thead>
+              <tbody>
+                <tr><td>กรุงเทพฯ</td><td class="l">ฐานผู้ติดตามเดิม 49.9%</td><td>150</td><td>3,000</td></tr>
+                <tr><td>ภูเก็ต</td><td class="l">ตลาดใหม่ ยังไม่มีฐานผู้ติดตาม · ถ้ารวมชุดเดียว ระบบจะเทงบไป กทม. หมด</td><td>150</td><td>3,000</td></tr>
+                <tr class="total"><td>รวม IG ATELIER</td><td class="l">กลุ่มอาชีพ ดีไซเนอร์ + อินทีเรีย · อายุ 25–44 · ปลายทางเว็บไซต์อย่างเดียว</td><td>300</td><td>6,000</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <h5>3 โพสต์ที่ใช้ — เรียงตามความแรงของโพสต์</h5>
+            <div class="tw">
+            <table>
+              <thead><tr><th>โพสต์</th><th>Reach</th><th>Shares</th><th>Saves</th><th class="l">บทบาทในชุด</th></tr></thead>
+              <tbody>
+                <tr><td>1 · “หน้างานวันนี้ ใช้อารมณ์คุยกันเถอะ”<span class="dn">19 ส.ค. · ER 9.9%</span></td><td style="color:var(--good);font-weight:600">25,305</td><td style="color:var(--good);font-weight:600">714</td><td style="color:var(--good);font-weight:600">161</td><td class="l">ตัวเปิด · 76% ของยอดดูมาจากคนที่ยังไม่ติดตาม เหมาะกับชุดภูเก็ต</td></tr>
+                <tr><td>2 · “เหนือเจ้าของบ้าน ยังมีซินแส”<span class="dn">17 มิ.ย.</span></td><td>16,725</td><td>281</td><td>57</td><td class="l">ขยายการเข้าถึง · ตรงกลุ่มคนสายออกแบบโดยตรง</td></tr>
+                <tr><td>3 · Galatea Side Table<span class="dn">14 ส.ค. · มีสินค้าจริง + สเปก</span></td><td>14,623</td><td>85</td><td>64</td><td class="l">ตัวปิดการขาย · CTA พาไปหน้าสินค้า Galatea บนเว็บไซต์</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="cap">ปลายทาง <b>เว็บไซต์อย่างเดียว</b> · ตอนออแกนิก โพสต์ 1 มีคนแตะลิงก์ภายนอกแค่ 2 ครั้ง แต่เข้าชมโปรไฟล์ 197 ครั้ง ตอนยิงแอดจึงต้องมีปุ่ม CTA ชัด · ตัวเลขในตารางเป็นผลออแกนิก</p>
+          </div>
+        </td>
+      </tr>
+
+      <!-- TIKTOK -->
+      <tr>
+        <td>
+          <span class="nm"><i class="sw" style="background:var(--tiktok)"></i>TikTok LUCK</span>
+          <span class="dt">ผล ส.ค. อ้างอิง · 26 ส.ค. – 2 ก.ย.</span>
+          <button type="button" class="more" id="btn-tiktok" aria-expanded="false" data-t="d-tiktok">ดูรายละเอียด</button>
+        </td>
+        <td>1,139 คลิก<span class="dn">ค่าแอด 1,400.27 ฿ · 0 ออเดอร์</span></td>
+        <td class="muted">ไม่มีงบแอด<span class="dn">หยุดพักเพื่อแก้การ์ดสินค้า</span></td>
+        <td><span class="pill n">หยุดพักชั่วคราว</span></td>
+      </tr>
+      <tr class="drow" id="d-tiktok" hidden>
+        <td colspan="4">
+          <div class="dbody">
+            <h5>ผลเดือน ส.ค. (อ้างอิง)</h5>
+            <div class="tw">
+            <table>
+              <thead><tr><th>แคมเปญ</th><th class="l">วัตถุประสงค์</th><th>ค่าแอด</th><th class="l">ผลลัพธ์</th></tr></thead>
+              <tbody>
+                <tr><td>Traffic_2KOL_SwiftWrap</td><td class="l">ทราฟฟิก (นับคลิก)</td><td>1,400.00</td><td class="l">37,760 การมองเห็น · 1,139 คลิก · CTR 3.02% · CPC ฿1.23</td></tr>
+                <tr><td>GMV Max_Pakjira_SwiftWrap</td><td class="l">ยอดขาย</td><td>0.27</td><td class="l">0 ออเดอร์ · มีสินค้า 1 รายการ 1 คลิป</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="cap"><b>เดือน ก.ย.:</b> หยุดยิงแอดชั่วคราวเพื่อแก้การ์ดสินค้า (product card) ในร้าน · จึงไม่มีค่าโฆษณาและไม่นับรวมในงบ ฿27,000 · สิ่งที่ได้เรียนรู้จาก ส.ค. สำหรับตอนกลับมายิง: GMV Max ต้องมีสินค้าหลายรายการและหลายคลิปให้ระบบทดสอบ · เป้า ROI ที่ตั้งสูงเกินไปทำให้ระบบไม่ยอมยิง · แคมเปญเดิมรันแค่ 15.1 ชม./วัน</p>
+          </div>
+        </td>
+      </tr>
+
+      <!-- WPC -->
+      <tr>
+        <td>
+          <span class="nm"><i class="sw" style="background:var(--wpc)"></i>Website WPC</span>
+          <span class="dt">Google Ads Search · ผล ส.ค. อ้างอิง · 17–31 ส.ค.</span>
+          <button type="button" class="more" id="btn-wpc" aria-expanded="false" data-t="d-wpc">ดูรายละเอียด</button>
+        </td>
+        <td>1,190 คลิก<span class="dn">ค่าแอด 3,737.58 ฿ · CPC ฿3.14</span></td>
+        <td>รันต่อจากแคมเปญ ส.ค.<span class="dn">ตัวเลข ก.ย. สรุปในรอบถัดไป</span></td>
+        <td><span class="pill g">กำลังรัน</span></td>
+      </tr>
+      <tr class="drow" id="d-wpc" hidden>
+        <td colspan="4">
+          <div class="dbody">
+            <h5>ผลเดือน ส.ค. (อ้างอิง · 15 วัน)</h5>
+            <div class="tw">
+            <table>
+              <thead><tr><th>คลิกเข้าเว็บไซต์</th><th>การแสดงผล</th><th>ค่าโฆษณา</th><th>ต้นทุนต่อคลิก</th><th>CTR</th><th>Conversion</th></tr></thead>
+              <tbody>
+                <tr><td>1,190</td><td>30,548</td><td>3,737.58</td><td>3.14</td><td>3.90%</td><td>2</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="cap"><b>เดือน ก.ย.:</b> แคมเปญรันต่อจาก ส.ค. เป้าหมายยังเป็นทราฟฟิกเข้าเว็บ · สิ่งที่ต้องติดตามจากรายงาน ส.ค. — ประสบการณ์หน้าเว็บได้ Below average ครบทั้ง 31 คีย์เวิร์ด (หน้าแรกหนัก 10 MB) · GA4 ยังไม่มีตัวเลข · คำค้นที่ไม่ใช่ลูกค้า ฿283.80 ต่อ 15 วัน · Website WPC ไม่มียอดขายให้คำนวณ ROAS</p>
+          </div>
+        </td>
+      </tr>
+
+      <tr class="total">
+        <td>รวมงบที่วางแผน ก.ย.</td><td>—</td><td>27,000 ฿<span class="dn">ไม่รวม WPC ที่รันต่อจาก ส.ค.</span></td><td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>งบเดือนกันยายนไปที่ไหนบ้าง</h2>
+  <p class="sub">งบที่วางแผนไว้ ฿27,000 · Shopee ได้มากสุดเพราะเป็นช่องทางเดียวที่พิสูจน์ยอดขายแล้ว</p>
+  <div class="mbar" role="img" aria-label="สัดส่วนงบเดือนกันยายน Shopee 55.6% IG LUCK 22.2% IG ATELIER 22.2%">
+    <div style="width:55.6%;background:var(--shopee)">Shopee 55.6%</div>
+    <div style="width:22.2%;background:var(--iglk)">IG LUCK 22.2%</div>
+    <div style="width:22.2%;background:var(--igat)">ATELIER 22.2%</div>
+  </div>
+  <div class="mkey">
+    <span><i style="background:var(--shopee)"></i>Shopee <b>15,000 ฿</b> — 31 วัน · วัดยอดขายได้</span>
+    <span><i style="background:var(--iglk)"></i>IG LUCK <b>6,000 ฿</b> — 20 วัน · วัดผลด้วยคลิก</span>
+    <span><i style="background:var(--igat)"></i>IG ATELIER <b>6,000 ฿</b> — 20 วัน · วัดผลด้วยคลิก</span>
+  </div>
+  <div class="note">
+    <b>ทำไม IG ถึงไม่มี ROAS</b><br>
+    ทั้ง 2 บัญชียิงด้วย Objective Traffic พาคนไป<b>เว็บไซต์อย่างเดียว</b> · ระบบ optimize เพื่อให้ได้คลิก ไม่ใช่ยอดขาย จึงวัดผลด้วยคลิก CTR และต้นทุนต่อคลิก · ถ้าอยากรู้ว่าคนที่คลิกซื้อต่อหรือไม่ ต้องดูจากข้อมูลบนเว็บไซต์ · ที่งบ ฿100–150/วัน/ชุด ยังไม่ควรใช้ Objective Sales เพราะระบบเก็บคอนเวอร์ชันไม่พอจะออกจากช่วงเรียนรู้
+  </div>
+
+  <div class="pace">
+    <div class="ph">
+      <div class="pt">วงเงิน Shopee ฿15,000 พอถึงวันไหน</div>
+      <div class="pv">ค่าแอดเฉลี่ย <b id="pace-v" class="num">฿1,200</b> / วัน</div>
+    </div>
+    <label for="pace" class="sub" style="display:block;margin:4px 0 0">เลื่อนเพื่อลองค่าแอดเฉลี่ยต่อวัน · เพดานที่ตั้งไว้คือ ฿1,200 (งบต่อวันเป็นเพดาน ค่าแอดจริงอาจต่ำกว่านี้)</label>
+    <input type="range" id="pace" min="300" max="1200" step="20" value="1200" aria-describedby="pace-res">
+    <div class="scale"><span>฿300</span><span>ครบ 31 วันพอดีที่ ≤ ฿484</span><span>฿1,200</span></div>
+    <div class="tl"><div class="fill" id="pace-fill"><span class="lbl" id="pace-lbl"></span></div></div>
+    <div class="tlx"><span>11 ก.ย.</span><span>26 ก.ย.</span><span>11 ต.ค.</span></div>
+    <div class="pres w" id="pace-res" aria-live="polite"></div>
+  </div>
+</section>
+
+<section>
+  <h2>สรุปแต่ละแพลตฟอร์ม</h2>
+  <p class="sub">Shopee สรุปจากผลจริง · IG สรุปจุดแข็งของแผนและสิ่งที่ต้องระวัง · TikTok และ WPC สรุปสถานะเดือนนี้</p>
+  <div class="pcards">
+
+    <div class="pc wide">
+      <div class="ph" style="background:var(--shopee)"><div class="n">Shopee LUCK</div><div class="m">ROAS 5.91 · CTR 3.75% · 26 ส.ค. – 8 ก.ย.</div></div>
+      <div class="pb">
+        <div>
+          <h4 class="g">ทำได้ดี</h4>
+          <ul>
+            <li>ROAS 5.91 · ACOS 16.93% · ยอดขายจากแอดเฉลี่ย ฿3,252 ต่อวันที่แอดทำงาน</li>
+            <li>Gataway ทำยอด ฿14,946 เกือบทั้งหมดเป็นทางตรง (Direct ROAS 6.18)</li>
+            <li>Grounded Grace ROAS 7.69 เท่ากันทั้งสองค่า</li>
+            <li>วางแผนรอบใหม่ครบ 12 สินค้า เริ่ม 11 ก.ย.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="b">ต้องแก้</h4>
+          <ul>
+            <li>เครดิตหมด 5 ก.ย. แอดหยุดยาวถึง 10 ก.ย. รวมช่วง 9.9</li>
+            <li>Direct ROAS วีค 2 เหลือ 1.42 (วีค 1 5.70) เพราะงบย้ายไป Feline</li>
+            <li>เพดานงบใหม่ ฿1,200/วัน ใช้วงเงินหมดราว 23 ก.ย.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="ph" style="background:var(--iglk)"><div class="n">IG LUCK</div><div class="m">3 ชุด × ฿100 · 11 – 30 ก.ย.</div></div>
+      <div class="pb">
+        <h4 class="g">จุดแข็งของแผน</h4>
+        <ul>
+          <li>IntelliTime Shares 48 สูงสุดในรอบ 90 วัน</li>
+          <li>Terrazzo Saves 27 สูงสุด = คนอยากได้</li>
+          <li>แยกชุดเท่ากัน ทุกโพสต์ได้งบ เทียบผลได้ตรง</li>
+        </ul>
+        <h4 class="b">ต้องระวัง</h4>
+        <ul>
+          <li>Terrazzo กับ Swift Wrap ยิงใน Shopee Ads ด้วย คนเห็นแอด IG แล้วไปซื้อใน Shopee แทนเว็บ ยอดส่วนนี้วัดไม่ได้</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="ph" style="background:var(--igat)"><div class="n">IG ATELIER</div><div class="m">กทม. ฿150 + ภูเก็ต ฿150 · 11 – 30 ก.ย.</div></div>
+      <div class="pb">
+        <h4 class="g">จุดแข็งของแผน</h4>
+        <ul>
+          <li>โพสต์ 1 Reach 25,305 · Shares 714 แรงสุดของบัญชี</li>
+          <li>Galatea Saves 64 มีสินค้าจริงพร้อมสเปก</li>
+        </ul>
+        <h4 class="b">ต้องระวัง</h4>
+        <ul>
+          <li>ภูเก็ตยังไม่มีฐานผู้ติดตาม + กลุ่มอาชีพแคบ</li>
+          <li>ออแกนิกคนแทบไม่แตะลิงก์ ต้องมี CTA ชัด</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="ph" style="background:var(--tiktok)"><div class="n">TikTok LUCK</div><div class="m">หยุดพักชั่วคราว · ไม่มีค่าแอด ก.ย.</div></div>
+      <div class="pb">
+        <h4 class="n">สถานะ</h4>
+        <ul>
+          <li>หยุดยิงแอดเพื่อแก้การ์ดสินค้าในร้าน</li>
+          <li>ผล ส.ค. อ้างอิง: CTR 3.02% · CPC ฿1.23</li>
+        </ul>
+        <h4 class="b">ก่อนกลับมายิง</h4>
+        <ul>
+          <li>GMV Max ต้องมีสินค้าหลายรายการ หลายคลิป</li>
+          <li>ทบทวนเป้า ROI ไม่ให้สูงจนระบบไม่ยิง</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="ph" style="background:var(--wpc)"><div class="n">Website WPC</div><div class="m">รันต่อจาก ส.ค. · Google Ads Search</div></div>
+      <div class="pb">
+        <h4 class="g">จาก ส.ค.</h4>
+        <ul>
+          <li>CTR 3.90% · 1,190 คลิก · ฿3.14/คลิก</li>
+          <li>ช่วงดีสุด ฿2.69/คลิก หลังเพิ่มเป็น 31 คีย์เวิร์ด</li>
+        </ul>
+        <h4 class="b">ต้องติดตาม</h4>
+        <ul>
+          <li>หน้าเว็บ Below average ทั้ง 31 คีย์เวิร์ด</li>
+          <li>GA4 ยังไม่มีตัวเลขปลายทาง</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>5 เรื่องที่ควรรู้</h2>
+  <p class="sub">เรียงตามผลกระทบต่อยอดขาย</p>
+
+  <div class="find"><div class="n">1</div><div>
+    <div class="t">Shopee ยังเป็นช่องทางเดียวที่วัดยอดขายได้ แต่แอดหยุดกลางคันเพราะเครดิตหมด</div>
+    <div class="d">ค่าแอด ฿6,057 ทำยอดขายจากแอด ฿35,767 ใน 11 วันที่แอดทำงาน · เครดิตหมด 5 ก.ย. แอดจึงไม่ได้ยิงช่วง 9.9 · แต่ลูกค้าที่คลิกไว้ก่อนหน้ายังกลับมาซื้อวัน 9.9 อีก ฿2,512 ถ้ารวมยอดนี้ ผลตอบแทนจริงของค่าแอดเท่ากับ ROAS 6.32</div>
+  </div></div>
+
+  <div class="find"><div class="n">2</div><div>
+    <div class="t">วงเงิน Shopee ฿15,000 อาจหมดก่อนจบแคมเปญ 11 ต.ค.</div>
+    <div class="d">เพดานงบรวม ฿1,200/วัน (กลุ่มละ ฿500 + รายสินค้า 2 × ฿100) ถ้าใช้เต็มทุกวัน เงินจะหมดราว 23 ก.ย. · ถ้าต้องการให้ยิงครบ 31 วัน ค่าแอดต้องเฉลี่ยไม่เกิน ฿484/วัน หรือไม่เกิน ฿3,400/สัปดาห์ · ลองเลื่อนแถบในส่วนงบด้านบนเพื่อดูวันที่เงินหมด</div>
+  </div></div>
+
+  <div class="find"><div class="n">3</div><div>
+    <div class="t">ในกลุ่มโฆษณา ระบบเทงบไปตัวที่ขายทางอ้อม — ต้องดูสัดส่วนงบรายสินค้าทุกสัปดาห์</div>
+    <div class="d">หลังลบ 3 สินค้าเมื่อ 2 ก.ย. Feline ได้งบวีค 2 ถึง 35.6% แต่ไม่มียอดทางตรงเลย ส่วน Grounded Grace ที่ Direct ROAS ดีที่สุดได้งบแค่ ฿16.90 · รอบใหม่ Luxe Haven และ Matha’s Favorite ที่ไม่มียอดจากแอดรอบก่อนกลับเข้ากลุ่มผ้าขนหนู (ในร้านยังขายได้ ฿7,888 และ ฿9,617) จึงควรตั้งจุดตรวจที่ 7 วัน ถ้ายังไม่มีการสั่งซื้อจากแอด ให้ถอดออกเหมือนรอบที่แล้ว</div>
+  </div></div>
+
+  <div class="find"><div class="n">4</div><div>
+    <div class="t">44% ของงบเดือนนี้อยู่ที่ IG ซึ่งวัดผลด้วยคลิก ไม่ใช่ยอดขาย</div>
+    <div class="d">IG 2 บัญชีใช้งบ ฿12,000 จาก ฿27,000 และพาคนไปเว็บไซต์อย่างเดียว · ใน Meta จะเห็นแค่คลิก CTR และต้นทุนต่อคลิก ส่วนคนที่คลิกแล้วซื้อหรือไม่ต้องดูจากข้อมูลบนเว็บไซต์ จึงควรใส่ UTM ในลิงก์ทุกโฆษณาตั้งแต่วันแรก · นอกจากนี้ Terrazzo และ Swift Wrap ยิงใน Shopee Ads ด้วย คนที่เห็นแอด IG อาจไปซื้อใน Shopee แทน ซึ่งยอดส่วนนี้จะไม่ถูกนับให้ IG</div>
+  </div></div>
+
+  <div class="find"><div class="n">5</div><div>
+    <div class="t">กลุ่มสินค้าเด็กและ Gataway FAMILY SET ยังไม่มีข้อมูลแอดมาก่อน</div>
+    <div class="d">6 สินค้ายังไม่เคยยิงแอด และ 3 ตัวไม่มียอดขายในร้านเลยช่วง 1 ส.ค.–8 ก.ย. · ให้สัปดาห์แรก 11–17 ก.ย. เป็นช่วงเรียนรู้ ดู CTR และจำนวนคลิกก่อน แล้วค่อยดู ROAS ในสัปดาห์ที่ 2 · ยอดจากแอดตามมาได้ถึง 7 วันหลังคลิก จึงควรสรุปผลรอบนี้หลังวันที่ 18 ต.ค.</div>
+  </div></div>
+</section>
+
+<section>
+  <h2>สถานะงาน</h2>
+  <p class="sub">สิ่งที่ทำเสร็จแล้ว และสิ่งที่กำลังดำเนินการ</p>
+  <div class="two">
+    <div class="box gd">
+      <div class="bt">✓ ทำเสร็จแล้ว</div>
+      <ul>
+        <li>Shopee — ลบ 3 สินค้าที่ไม่ทำยอดออกจากกลุ่ม เมื่อ 2 ก.ย. หลังรันครบ 7 วัน</li>
+        <li>Shopee — สรุปผลวีค 1+2 และวางแผนรอบใหม่ 2 กลุ่ม + 2 รายสินค้า เริ่มยิง 11 ก.ย.</li>
+        <li>IG — คัดโพสต์ยิงแอด 6 โพสต์จาก 2 บัญชี · ATELIER เปลี่ยนโพสต์ที่ 3 และเรียงลำดับใหม่ 7 ก.ย.</li>
+        <li>IG LUCK — ปรับงบเป็น 3 ชุดโฆษณา ชุดละ ฿100/วัน</li>
+      </ul>
+    </div>
+    <div class="box wr">
+      <div class="bt">⟳ กำลังดำเนินการ</div>
+      <ul>
+        <li>TikTok — หยุดยิงแอดชั่วคราว ระหว่างแก้การ์ดสินค้าในร้าน</li>
+        <li>Website WPC — รันแอดต่อจากแคมเปญ ส.ค.</li>
+        <li>Shopee + IG — สัปดาห์แรกเป็นช่วงเรียนรู้ · เช็กค่าแอดสะสมและสัดส่วนงบรายสินค้า 18 ก.ย.</li>
+        <li>Shopee — ดูว่ายอด Gataway ในกลุ่มลดลงไหมหลัง Gataway FAMILY SET เริ่มยิง</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="dec">
+  <h2>ประเด็นที่ยังต้องตัดสินใจในเดือนถัดไป</h2>
+  <p class="sub">4 เรื่องที่จะกระทบผลเดือนกันยายน – ตุลาคม</p>
+  <div class="tw">
+  <table>
+    <thead><tr><th>เรื่อง</th><th class="l">อาการ · สาเหตุ</th><th class="l">ผลกระทบ</th><th class="l">วิธีแก้ไข</th><th class="l">ผู้รับผิดชอบ · กำหนด</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="nm">วงเงิน Shopee<br>กับเพดานงบรายวัน</span></td>
+        <td class="l sy"><b>อาการ</b> เพดานรวม ฿1,200/วัน แต่วงเงิน ฿15,000 ต้องใช้ 31 วัน · <b>สาเหตุ</b> งบรายวันตั้งตามจำนวนกลุ่ม ไม่ได้หารจากวงเงิน</td>
+        <td class="l">ถ้าใช้เต็มเพดาน เงินหมดราว 23 ก.ย. แอดหยุดก่อน 11 ต.ค. เหมือนรอบที่แล้ว</td>
+        <td class="l">เลือกระหว่างลดงบรายวันให้เฉลี่ย ≤ ฿484 หรือเตรียมวงเงินเพิ่ม · เช็กค่าแอดสะสมทุกสัปดาห์ (≤ ฿3,400) · เปิดเติมเครดิตอัตโนมัติ</td>
+        <td class="l"><span class="own">ทีมโฆษณา</span><br><span class="due">18 ก.ย.</span></td>
+      </tr>
+      <tr>
+        <td><span class="nm">วัดผลปลายทางเว็บไซต์<br>ของ IG</span></td>
+        <td class="l sy"><b>อาการ</b> IG ทั้ง 2 บัญชีพาคนไปเว็บไซต์อย่างเดียว แต่ Meta รายงานได้แค่คลิก · <b>สาเหตุ</b> แคมเปญเป็น Traffic และยังต้องยืนยันว่าลิงก์โฆษณามี UTM และเว็บไซต์บันทึกข้อมูลผู้เข้าชมได้</td>
+        <td class="l">ตอบไม่ได้ว่าคนที่คลิกจาก IG ดูสินค้าหรือซื้อต่อบนเว็บหรือไม่ และโพสต์ไหนควรได้งบเพิ่ม</td>
+        <td class="l">ใส่ UTM แยกรายโพสต์ในทุกโฆษณา · ตรวจว่า GA4 / Meta Pixel บนเว็บไซต์ LUCK และ ATELIER บันทึกข้อมูลได้ · ดูผลคู่กันทุกสัปดาห์</td>
+        <td class="l"><span class="own">ทีมโฆษณา · ทีมเว็บไซต์</span><br><span class="due">18 ก.ย.</span></td>
+      </tr>
+      <tr>
+        <td><span class="nm">วันกลับมายิง<br>TikTok</span></td>
+        <td class="l sy"><b>อาการ</b> หยุดยิงแอดตั้งแต่ต้น ก.ย. · <b>สาเหตุ</b> แก้การ์ดสินค้าในร้านก่อน เพราะปัญหาเดิมอยู่ที่หน้าร้าน ไม่ใช่ตัวโฆษณา</td>
+        <td class="l">เดือน ก.ย. ยังไม่มีข้อมูลการขายจาก TikTok ให้เทียบกับช่องทางอื่น</td>
+        <td class="l">กำหนดวันแก้การ์ดเสร็จ แล้วเปิด GMV Max ด้วยสินค้าหลายรายการ หลายคลิป และเป้า ROI ที่ระบบยิงได้</td>
+        <td class="l"><span class="own">ทีมที่ดูแลร้าน TikTok</span><br><span class="due">รอระบุวัน</span></td>
+      </tr>
+      <tr>
+        <td><span class="nm">หน้าเว็บและ GA4<br>ของ Website WPC</span></td>
+        <td class="l sy"><b>อาการ</b> ส.ค. หน้าเว็บได้ Below average ทุกคีย์เวิร์ด และ GA4 ไม่มีตัวเลข · <b>สาเหตุ</b> หน้าแรกหนัก 10 MB และการตั้งค่า GA4</td>
+        <td class="l">แอดที่รันต่อยังจ่ายค่าคลิกแพงกว่าที่ควร และตอบไม่ได้ว่าคนที่คลิกทำอะไรต่อบนเว็บ</td>
+        <td class="l">ยืนยันงบรายวัน ก.ย. · ตรวจคะแนนหน้าเว็บและ GA4 ซ้ำก่อนสรุปผลรอบถัดไป</td>
+        <td class="l"><span class="own">ทีมเว็บไซต์</span><br><span class="due">30 ก.ย.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<footer>
+  <b>ที่มาข้อมูล:</b> Shopee Seller Centre (ร้าน LUCK Thailand · Shop ID 154920527) รายงานกลุ่มโฆษณา 26/08–01/09 และ 02/09–08/09/2026 · ไฟล์คำสั่งซื้อ 1 ส.ค.–9 ก.ย. 69 · Meta Business Suite (luck_th.official · atelier.th) ข้อมูลโพสต์ออแกนิก · TikTok Ads Manager และ Google Ads (ผล ส.ค. จากรายงานเดือน ส.ค.) · ข้อมูล ณ 11 ก.ย. 2569<br>
+  <b>นิยาม:</b> ROAS = ยอดขายจากแอด ÷ ค่าโฆษณา · Direct ROAS = ยอดขายเฉพาะสินค้าตัวที่ถูกคลิก ÷ ค่าโฆษณา · ACOS = ค่าโฆษณา ÷ ยอดขายจากแอด · CTR = สัดส่วนคนที่กดคลิกจากคนที่เห็นโฆษณา · CPC = ค่าโฆษณา ÷ จำนวนคลิก · “การสั่งซื้อ” ของ Shopee Ads นับตามรายการสินค้า 1 ออเดอร์ที่มีหลายสินค้านับได้หลายครั้ง · ยอดขายจากแอดของ Shopee นับภายใน 7 วันหลังคลิก บันทึกตามวันที่สั่งซื้อ · Reach / Shares / Saves ของ IG เป็นผลออแกนิกก่อนยิงแอด
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.more').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var row = document.getElementById(btn.dataset.t);
+    var open = row.hidden;
+    row.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'ซ่อนรายละเอียด' : 'ดูรายละเอียด';
+  });
+});
+window.addEventListener('beforeprint', function(){
+  document.querySelectorAll('tr.drow').forEach(function(r){ r.dataset.was = r.hidden ? '1':'0'; r.hidden = false; });
+});
+window.addEventListener('afterprint', function(){
+  document.querySelectorAll('tr.drow').forEach(function(r){ if(r.dataset.was === '1') r.hidden = true; });
+});
+
+(function(){
+  var BUDGET=15000, DAYS=31, START=new Date(2026,8,11);
+  var MON=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+  var el=document.getElementById('pace'), v=document.getElementById('pace-v'),
+      fill=document.getElementById('pace-fill'), lbl=document.getElementById('pace-lbl'), res=document.getElementById('pace-res');
+  function fmt(n){return Math.round(n).toLocaleString('en-US');}
+  function upd(){
+    var d=+el.value, last=BUDGET/d;
+    v.textContent='฿'+fmt(d);
+    if(last>=DAYS){
+      fill.style.width='100%'; fill.classList.add('full');
+      lbl.textContent='ยิงครบ 31 วัน';
+      res.className='pres g';
+      res.innerHTML='ยิงได้ <b>ครบ 31 วันถึง 11 ต.ค.</b> ใช้เงิน ฿'+fmt(d*DAYS)+' เหลือวงเงิน ฿'+fmt(BUDGET-d*DAYS);
+    }else{
+      var days=Math.floor(last), end=new Date(START); end.setDate(START.getDate()+days);
+      fill.style.width=(last/DAYS*100)+'%'; fill.classList.remove('full');
+      lbl.textContent=days+' วัน';
+      res.className='pres w';
+      res.innerHTML='เงินหมดราว <b>'+end.getDate()+' '+MON[end.getMonth()]+'</b> · ยิงได้ประมาณ '+days+' จาก 31 วัน · ขาดอีก ฿'+fmt(d*DAYS-BUDGET)+' ถ้าต้องการยิงครบที่ค่าแอดระดับนี้';
+    }
+  }
+  el.addEventListener('input',upd); upd();
+})();
+</script>
+
+</body>
+</html>
