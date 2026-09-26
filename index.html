@@ -203,6 +203,43 @@ footer b{color:var(--ink2)}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   @page{size:A4;margin:10mm}
 }
+
+/* checklist */
+section.cl{border:1.5px solid #BFD3EE}
+.clh{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.clh .sub{margin-bottom:8px}
+.clc{font-size:13px;color:var(--ink2);min-width:150px;text-align:right}
+.clc b{font-size:20px;color:var(--navy);font-variant-numeric:tabular-nums}
+.clbar{height:6px;background:var(--line2);border-radius:4px;margin-top:6px;overflow:hidden}
+.clbar div{height:100%;width:0;background:var(--good);border-radius:4px;transition:width .2s}
+.ck{position:relative;display:grid;grid-template-columns:24px 1fr 210px;gap:4px 14px;align-items:start;padding:12px 4px;border-top:1px solid var(--line2)}
+.ck input{position:absolute;opacity:0;width:1px;height:1px;left:0;top:0}
+.ck .bx{width:22px;height:22px;border:2px solid #9FB2CC;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;margin-top:1px;cursor:pointer}
+.ck .ct{cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.ck input:checked + .bx{background:var(--good);border-color:var(--good)}
+.ck input:checked + .bx::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg);margin-top:-2px}
+.ck input:focus-visible + .bx{outline:2.5px solid var(--navy2);outline-offset:2px}
+.ck .cc{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--mut)}
+.ck .cc i{width:9px;height:9px;border-radius:2px}
+.ck .t{display:block;font-size:14px;font-weight:600;color:var(--ink);margin:2px 0 1px}
+.ck .d{display:block;font-size:12.5px;color:var(--ink2)}
+.ck .cm{font-size:12.5px;color:var(--ink);background:var(--soft);border-radius:8px;padding:7px 10px}
+.ck .ml{display:block;font-size:10.5px;font-weight:700;color:var(--mut);letter-spacing:.03em}
+.ck .mn{display:block;font-size:11.5px;color:var(--mut);margin-top:1px}
+.ck .why{grid-column:2 / 4;font-size:12.5px;color:var(--ink2)}
+.ck .why summary{cursor:pointer;color:var(--navy2);font-weight:500;font-size:12px;width:max-content;list-style:none}
+.ck .why summary::-webkit-details-marker{display:none}
+.ck .why summary::before{content:"\203A";display:inline-block;margin-right:5px;transition:transform .15s}
+.ck .why[open] summary::before{transform:rotate(90deg)}
+.ck .why summary:focus-visible{outline:2px solid var(--navy2);outline-offset:3px;border-radius:4px}
+.ck .why p{margin:6px 0 0;line-height:1.65}
+.ck .why .lb{color:var(--navy);font-weight:700}
+.ck.done .t{text-decoration:line-through;color:var(--mut)}
+.ck.done{background:#F4FBF7}
+.clnote{margin:10px 0 0;font-size:11.5px;color:var(--mut)}
+@media (max-width:860px){.ck{grid-template-columns:24px 1fr}.ck .cm,.ck .why{grid-column:2}.clc{text-align:left}}
+@media print{.ck{break-inside:avoid}.ck .why{display:block}}
 </style>
 </head>
 <body>
@@ -325,7 +362,7 @@ footer b{color:var(--ink2)}
             <tr class="total"><td>รวม</td><td>—</td><td class="num">2,081.76</td><td class="num">—</td><td class="num">—</td><td class="num">1,490</td><td class="num">—</td><td class="num">1.40</td><td class="num">1,435</td></tr>
           </tbody>
         </table>
-        <p class="cap"><b>โพสต์ที่ยิงเข้าเว็บยังนำชัดเจน</b> — “ห้องน้ำที่ดีไม่ต้องใหญ่” CTR ขึ้นเป็น 3.79% ส่งคนเข้าเว็บ 392 คน (฿1.75 ต่อคน) เพิ่มจาก 339 คน · <b>โพสต์ “35%” ความถี่ขึ้นเป็น 2.65 ครั้งต่อคน</b> สูงสุดในทุกบัญชี และ CTR ลดลงต่อเนื่องจาก 1.51% เหลือ 1.26% เป็นอาการของคนกลุ่มเดิมเห็นซ้ำจนเบื่อ</p>
+        <p class="cap"><b>โพสต์ที่ยิงเข้าเว็บยังนำชัดเจน</b> — “ห้องน้ำที่ดีไม่ต้องใหญ่” CTR ขึ้นเป็น 3.79% ส่งคนเข้าเว็บ 392 คน (฿1.75 ต่อคน) เพิ่มจาก 339 คน · <b>โพสต์ “35%” ความถี่ขึ้นเป็น 2.65 ครั้งต่อคน</b> สูงสุดในทุกบัญชี และ CTR ลดลงต่อเนื่องจาก 1.51% เหลือ 1.26% เป็นอาการของคนกลุ่มเดิมเห็นซ้ำจนเบื่อ · <b>ยังไม่เปลี่ยนโพสต์ในรอบนี้ จับตาต่อ</b> ถ้าสัปดาห์หน้าความถี่เกิน 3 หรือ CTR ต่ำกว่า 1.2% ควรพิจารณาเปลี่ยน</p>
         <p class="cap">ทั้ง 3 โพสต์ใช้งบใกล้เคียงกัน (฿686–703) ทั้งที่ประสิทธิภาพต่างกันถึง 3 เท่า · ยอด “เข้าถึง” แยกรายโพสต์ รวมกันไม่ได้ เพราะไฟล์รอบนี้ไม่มีแถวยอดรวมที่ตัดคนซ้ำ</p>
       </div></td></tr>
 
@@ -479,128 +516,70 @@ footer b{color:var(--ink2)}
   </div>
 </section>
 
-<section class="dec">
-  <h2>ประเด็นที่ยังต้องตัดสินใจในสัปดาห์ถัดไป</h2>
-  <p class="sub">8 เรื่อง แยกตามช่องทาง · กดปุ่มเพื่อดูทีละช่องทาง</p>
-
-  <div class="dtabs" role="tablist" aria-label="เลือกช่องทาง">
-    <button type="button" class="dtab" role="tab" data-k="shopee" aria-selected="true" aria-controls="c-shopee">
-      <span class="h"><i style="background:var(--shopee)"></i>1 · Shopee</span><span class="d">2 เรื่อง</span></button>
-    <button type="button" class="dtab" role="tab" data-k="iglk" aria-selected="false" aria-controls="c-iglk">
-      <span class="h"><i style="background:var(--iglk)"></i>2 · IG LUCK</span><span class="d">2 เรื่อง</span></button>
-    <button type="button" class="dtab" role="tab" data-k="igat" aria-selected="false" aria-controls="c-igat">
-      <span class="h"><i style="background:var(--igat)"></i>3 · IG ATELIER</span><span class="d">2 เรื่อง</span></button>
-    <button type="button" class="dtab" role="tab" data-k="wpc" aria-selected="false" aria-controls="c-wpc">
-      <span class="h"><i style="background:var(--wpc)"></i>4 · Google Ads WPC</span><span class="d">2 เรื่อง</span></button>
-    <button type="button" class="dtab" role="tab" data-k="all" aria-selected="false" aria-controls="c-shopee c-iglk c-igat c-wpc">
-      <span class="h"><i style="background:#8A5A12"></i>ทั้งหมด</span><span class="d">8 เรื่อง</span></button>
-  </div>
-
-  <div class="dcard" id="c-shopee" role="tabpanel">
-    <div class="dch" style="background:var(--shopee)"><span class="t">1 · Shopee Ads LUCK</span><span class="m">2 เรื่อง · ค่าโฆษณาสัปดาห์นี้ ฿4,673.36</span></div>
-    <div class="ditem">
-      <div>
-        <div class="q">1.1 เครดิตจะหมดก่อนจบรอบราว 9 วัน</div>
-        <p>เหลือ ฿5,221.67 · ใช้เฉลี่ยวันละ ฿668 (ยังต่ำกว่าเพดาน ฿1,200) · ถ้าคงอัตรานี้เครดิตจะหมดราว <b>2 ต.ค.</b> แต่รอบวางไว้ถึง 11 ต.ค.</p>
-        <p><span class="lb">ผลกระทบ:</span> ถ้าโฆษณาหยุด 9 วันในช่วงที่ ROAS ดีที่สุดของรอบ คิดจาก Direct ROAS 5.49 จะเสียโอกาสยอดขายจากแอดราว <b>฿33,000</b> (ประมาณการ)</p>
-      </div>
-      <div>
-        <p><span class="lb">วิธีแก้:</span> เลือก 1 ทาง — <b>(ก)</b> เติมเครดิตเพิ่มราว <b>฿6,000</b> ภายใน 1 ต.ค. ให้วิ่งจนจบรอบ · <b>(ข)</b> ไม่เติม ปล่อยให้จบเร็ว แล้วใช้ผล 3 สัปดาห์วางแผนรอบถัดไป</p>
-        <p>ถ้าเลือก (ก) ควรรู้อัตรากำไรขั้นต้นก่อน เพื่อยืนยันว่า ROAS ระดับนี้กำไรจริง</p>
-        <p><span class="own">เจ้าของงบ</span> <span class="own">ทีมโฆษณา</span></p>
-      </div>
+<section class="cl">
+  <div class="clh"><div><h2>Checklist งานที่ต้องแก้ไข</h2><p class="sub">กดติ๊กเมื่อทำเสร็จ · กด “ดูเหตุผล” เพื่อดูผลกระทบและวิธีทำ · สัปดาห์หน้าจะดูผลก่อน/หลังของข้อที่ทำแล้ว</p></div>
+  <div class="clc"><b id="ckn">0</b> / 6 ทำแล้ว<div class="clbar"><div id="ckbar"></div></div></div></div>
+    <div class="ck">
+      <input type="checkbox" id="ck1" data-id="w2-1">
+      <label class="bx" for="ck1"><span class="sr">ทำแล้ว</span></label>
+      <label class="ct" for="ck1"><span class="cc"><i style="background:var(--shopee)"></i>Shopee</span><span class="t">ถอดสินค้าเด็ก 3 ตัวที่ไม่มีออเดอร์ 2 สัปดาห์ติด</span><span class="d">เซตของขวัญเครื่องนอน · ผ้ากันเปื้อน · ถุงเท้า Big Bow</span></label>
+      <span class="cm"><span class="ml">สัปดาห์หน้าดู</span>ROAS กลุ่มสินค้าเด็ก<span class="mn">ตอนนี้ 2.23</span></span>
+      <details class="why"><summary>ดูเหตุผล</summary>
+        <p><span class="lb">ผลกระทบ:</span> ROAS 2.23 (เดิม 1.97) น่าจะยังต่ำกว่าจุดคุ้มทุนหลังหักต้นทุนสินค้า · ระบบส่งโฆษณาน้อยลงเหลือ ฿44 ต่อวัน · สินค้าที่ไม่มีออเดอร์สัปดาห์นี้ใช้งบรวม ฿153.80</p>
+        <p><span class="lb">วิธีทำ:</span> ถอด 3 ตัวที่ไม่มีออเดอร์ 2 สัปดาห์ติดออกจากกลุ่ม ให้งบไหลไปที่ผ้าอ้อม Lullaby (ROAS 4.51) และผ้าห่ม Circus (เคยขายได้สัปดาห์ก่อน) · <b>การถอดสินค้าไม่ได้ลด ROAS เป้า</b> จึงไม่ทำให้ใช้เงินเพิ่ม และไม่ติดข้อจำกัดงบกลุ่มขั้นต่ำ ฿500 · ถ้ารู้อัตรากำไรขั้นต้นของกลุ่มนี้ จะคำนวณจุดคุ้มทุนจริงได้</p>
+      </details>
     </div>
-    <div class="ditem">
-      <div>
-        <div class="q">1.2 กลุ่มสินค้าเด็ก — ครบ 2 สัปดาห์แล้ว ถึงเวลาประเมิน</div>
-        <p>ROAS 2.23 (เดิม 1.97) · 4 จาก 5 สินค้าไม่มีออเดอร์ · ระบบส่งโฆษณาน้อยลงเหลือ ฿44 ต่อวัน · Lullaby เป็นตัวเดียวที่ขายได้ (ROAS 4.51)</p>
-        <p><span class="lb">ผลกระทบ:</span> เงินน้อย (฿305 ต่อสัปดาห์) แต่ ROAS ยังน่าจะต่ำกว่าจุดคุ้มทุนหลังหักต้นทุนสินค้า</p>
-      </div>
-      <div>
-        <p><span class="lb">วิธีแก้:</span> ถอดสินค้าที่ไม่มีออเดอร์ 2 สัปดาห์ติดออกจากกลุ่ม (เซตของขวัญเครื่องนอน · ผ้ากันเปื้อน · ถุงเท้า Big Bow) ให้งบไหลไปที่ Lullaby และ Circus · <b>การถอดสินค้าไม่ได้ลด ROAS เป้า</b> จึงไม่ทำให้ใช้เงินเพิ่ม ไม่ติดข้อจำกัดงบกลุ่มขั้นต่ำ ฿500</p>
-        <p>ก่อนทำ ขอทราบอัตรากำไรขั้นต้นของกลุ่มนี้ เพื่อคำนวณจุดคุ้มทุนจริง</p>
-        <p><span class="own">ทีมโฆษณา</span></p>
-      </div>
+    <div class="ck">
+      <input type="checkbox" id="ck2" data-id="w2-2">
+      <label class="bx" for="ck2"><span class="sr">ทำแล้ว</span></label>
+      <label class="ct" for="ck2"><span class="cc"><i style="background:var(--shopee)"></i>Shopee</span><span class="t">เช็กราคาเซตและหน้าสินค้า Gateway FAMILY SET</span><span class="d">CTR ผ่านเกณฑ์แล้ว แต่ยังไม่มีคนซื้อตัวเซตโดยตรง</span></label>
+      <span class="cm"><span class="ml">สัปดาห์หน้าดู</span>Direct ROAS ของ Gateway FAMILY SET<span class="mn">ตอนนี้ 0.00</span></span>
+      <details class="why"><summary>ดูเหตุผล</summary>
+        <p><span class="lb">ผลกระทบ:</span> ใช้งบ ฿582.91 (12.5% ของงบ Shopee) · หน้าปกใหม่ทำ CTR ขึ้นจาก 1.01% เป็น 2.72% แล้ว มีคนใส่ตะกร้า 3 ครั้ง แต่ไม่มีใครซื้อตัวเซต 3 ออเดอร์ที่นับได้เป็นสินค้าตัวอื่น</p>
+        <p><span class="lb">วิธีทำ:</span> ตามเกณฑ์ที่ตั้งไว้ เมื่อ CTR ผ่านแต่ยังไม่ขาย ปัญหาน่าจะอยู่ที่ราคาเซตหรือหน้าสินค้า · เทียบราคาเซตกับการซื้อแยกชิ้น ว่าคุ้มกว่าชัดเจนไหม · ดูรูป รายละเอียด และโปรโมชั่นในหน้าสินค้า · ถ้าสัปดาห์หน้า Direct ROAS ยังเป็น 0 ค่อยพิจารณาหยุดแคมเปญนี้</p>
+      </details>
     </div>
-  </div>
-
-  <div class="dcard" id="c-iglk" role="tabpanel" hidden>
-    <div class="dch" style="background:var(--iglk)"><span class="t">2 · IG LUCK</span><span class="m">2 เรื่อง · ค่าโฆษณาสัปดาห์นี้ ฿2,081.76</span></div>
-    <div class="ditem">
-      <div>
-        <div class="q">2.1 โพสต์ “35%” เริ่มล้า</div>
-        <p>ความถี่ 2.65 ครั้งต่อคน สูงสุดในทุกบัญชี · CTR ลดต่อเนื่อง 1.51% → 1.26% · ต้นทุนต่อคลิก ฿1.59 แพงสุดในบัญชี · ยังได้งบ ฿692.55 เท่ากับโพสต์อื่น</p>
-        <p><span class="lb">ผลกระทบ:</span> ถ้าย้ายงบนี้ไปโพสต์ “ห้องน้ำที่ดีไม่ต้องใหญ่” (฿1.14 ต่อคลิก) จะได้คลิกเพิ่มราว 170 คลิกต่อสัปดาห์ และคนเข้าเว็บเพิ่ม</p>
-      </div>
-      <div>
-        <p><span class="lb">วิธีแก้:</span> หยุดโพสต์ “35%” แล้วเปลี่ยนเป็นคอนเทนต์ใหม่ที่ยิงเข้าเว็บไซต์ (ไม่ใช่โปรไฟล์) เพราะโพสต์ที่ยิงเข้าเว็บดีกว่าทุกสัปดาห์ · หรือถ้ายังไม่มีโพสต์ใหม่ ให้ปิดไปก่อนแล้วปล่อยงบแคมเปญไหลไปที่อีก 2 โพสต์</p>
-        <p><span class="own">ทีมโฆษณา</span> <span class="own">ทีมคอนเทนต์</span></p>
-      </div>
+    <div class="ck">
+      <input type="checkbox" id="ck3" data-id="w2-3">
+      <label class="bx" for="ck3"><span class="sr">ทำแล้ว</span></label>
+      <label class="ct" for="ck3"><span class="cc"><i style="background:var(--igat)"></i>IG ATELIER</span><span class="t">โพสต์หน้างาน กลับไปใช้กลุ่มเป้าหมายเดิม</span><span class="d">ต้นทุนต่อคลิกเกินเกณฑ์ ฿1.20 มา 2 สัปดาห์</span></label>
+      <span class="cm"><span class="ml">สัปดาห์หน้าดู</span>ต้นทุนต่อคลิกโพสต์หน้างาน<span class="mn">ตอนนี้ ฿1.49</span></span>
+      <details class="why"><summary>ดูเหตุผล</summary>
+        <p><span class="lb">ผลกระทบ:</span> จ่าย ฿642.41 ต่อสัปดาห์ได้ 432 คลิก · ถ้าได้ต้นทุนเท่ากลุ่มเป้าหมายเดิม (฿1.03) จะได้ราว 620 คลิก · โพสต์อีก 2 ตัวในบัญชีเดียวกันได้ ฿0.50–0.61</p>
+        <p><span class="lb">วิธีทำ:</span> สัปดาห์ก่อนตกลงว่า “ดูต่อ 1 สัปดาห์ ถ้าต้นทุนต่อคลิกยังเกิน ฿1.20 ให้กลับไปใช้กลุ่มเป้าหมายเดิม” · สัปดาห์นี้ได้ ฿1.49 และ CTR 1.60% ไม่ดีขึ้นเลย จึงถึงเกณฑ์แล้ว · ถ้าตั้งใจจะเข้าถึงกลุ่มใหม่นี้ต่อ ให้เปลี่ยนตัวโพสต์แทน</p>
+      </details>
     </div>
-    <div class="ditem">
-      <div>
-        <div class="q">2.2 ลิงก์ไม่มี UTM และยังไม่ตรวจ GA4 / Meta Pixel บน luck-th.com</div>
-        <p>ค้างมาจากสัปดาห์ก่อน · โพสต์ที่ยิงเข้าเว็บส่งคนเข้า 392 คน แต่ไม่รู้ว่าคนเหล่านั้นซื้ออะไรต่อ</p>
-        <p><span class="lb">ผลกระทบ:</span> ค่าโฆษณา <b>฿2,081.76 ต่อสัปดาห์</b> ตอบไม่ได้ว่าสร้างยอดขายเท่าไหร่</p>
-      </div>
-      <div>
-        <p><span class="lb">วิธีแก้:</span> ใส่ UTM รายโพสต์ (แบรนด์ · ชื่อโพสต์ · รอบการยิง) · ตรวจว่า GA4 และ Meta Pixel ยิงเหตุการณ์ครบบนหน้าสินค้าและหน้าชำระเงิน · ทำพร้อมตอนเปลี่ยนโพสต์ในข้อ 2.1 ได้เลย</p>
-        <p><span class="own">ทีมเว็บไซต์</span> <span class="own">ทีมโฆษณา</span></p>
-      </div>
+    <div class="ck">
+      <input type="checkbox" id="ck4" data-id="w2-4">
+      <label class="bx" for="ck4"><span class="sr">ทำแล้ว</span></label>
+      <label class="ct" for="ck4"><span class="cc"><i style="background:var(--iglk)"></i>IG LUCK + ATELIER</span><span class="t">ใส่ UTM รายโพสต์ และตรวจ GA4 / Meta Pixel</span><span class="d">luck-th.com · ateliercorp.co</span></label>
+      <span class="cm"><span class="ml">สัปดาห์หน้าดู</span>เริ่มเห็นยอดขายบนเว็บที่มาจาก IG<span class="mn">ตอนนี้ยังวัดไม่ได้</span></span>
+      <details class="why"><summary>ดูเหตุผล</summary>
+        <p><span class="lb">ผลกระทบ:</span> IG สองบัญชีใช้ ฿4,082.17 ต่อสัปดาห์ ส่งคนเข้าเว็บ 1,294 คน (LUCK 392 · ATELIER 902) แต่ตอบไม่ได้ว่าสร้างยอดขายเท่าไหร่ · ตัดสินใจงบได้แค่จาก CTR กับต้นทุนต่อคลิก</p>
+        <p><span class="lb">วิธีทำ:</span> ใส่ UTM รายโพสต์ ระบุแบรนด์ ชื่อโพสต์ และรอบการยิง · ตรวจว่า GA4 และ Meta Pixel ยิงเหตุการณ์ครบบนหน้าสินค้าและหน้าชำระเงิน · ของ ATELIER ให้เริ่มที่หน้าสินค้า Galatea ซึ่งเป็นปลายทางของโพสต์ที่ดีที่สุด</p>
+      </details>
     </div>
-  </div>
-
-  <div class="dcard" id="c-igat" role="tabpanel" hidden>
-    <div class="dch" style="background:var(--igat)"><span class="t">3 · IG ATELIER</span><span class="m">2 เรื่อง · ค่าโฆษณาสัปดาห์นี้ ฿2,000.41</span></div>
-    <div class="ditem">
-      <div>
-        <div class="q">3.1 โพสต์หน้างาน — ถึงเกณฑ์ที่ต้องกลับไปใช้กลุ่มเป้าหมายเดิม</div>
-        <p>สัปดาห์ก่อนตกลงว่า “ดูต่อ 1 สัปดาห์ ถ้าต้นทุนต่อคลิกยังเกิน ฿1.20 ให้กลับไปใช้กลุ่มเป้าหมายเดิม” · สัปดาห์นี้ได้ <b>฿1.49</b> และ CTR 1.60% ไม่ดีขึ้นเลย</p>
-        <p><span class="lb">ผลกระทบ:</span> จ่าย ฿642 ต่อสัปดาห์ได้ 432 คลิก ถ้าใช้กลุ่มเป้าหมายเดิม (฿1.03) จะได้ราว 620 คลิก</p>
-      </div>
-      <div>
-        <p><span class="lb">วิธีแก้:</span> กลับไปใช้กลุ่มเป้าหมายเดิมตามเกณฑ์ที่ตั้งไว้ · หรือถ้าตั้งใจจะเข้าถึงกลุ่มใหม่นี้ต่อ ให้เปลี่ยนตัวโพสต์แทน เพราะโพสต์อีก 2 ตัวในบัญชีเดียวกันได้ ฿0.50–0.61</p>
-        <p><span class="own">ทีมโฆษณา</span></p>
-      </div>
+    <div class="ck">
+      <input type="checkbox" id="ck5" data-id="w2-5">
+      <label class="bx" for="ck5"><span class="sr">ทำแล้ว</span></label>
+      <label class="ct" for="ck5"><span class="cc"><i style="background:var(--wpc)"></i>Google Ads</span><span class="t">เปิดกลุ่มโฆษณาที่เหลือ 3 กลุ่ม พร้อมหน้าปลายทางรายกลุ่ม</span><span class="d">วรจักร · ร้าน/ใกล้ฉัน · ตามยี่ห้อ-รุ่น</span></label>
+      <span class="cm"><span class="ml">สัปดาห์หน้าดู</span>CTR และต้นทุนต่อคลิกรายกลุ่ม<span class="mn">ตอนนี้ 2 จาก 5 กลุ่ม</span></span>
+      <details class="why"><summary>ดูเหตุผล</summary>
+        <p><span class="lb">ผลกระทบ:</span> คำกลุ่มวรจักรและร้าน/ใกล้ฉันใช้งบรวม ฿841.61 ต่อสัปดาห์ (47.5%) แต่ยังอยู่ในกลุ่มทั่วไป ไม่มีโฆษณาและหน้าปลายทางเฉพาะกลุ่ม · คำที่มีชื่อย่านร้านได้ CTR 11–15% สูงกว่าคำทั่วไป 3–6 เท่า</p>
+        <p><span class="lb">วิธีทำ:</span> เปิดกลุ่ม <b>วรจักร</b> และ <b>ร้าน/ใกล้ฉัน</b> ก่อน เพราะใช้งบมากที่สุด แล้วตามด้วยกลุ่มยี่ห้อ-รุ่น ตามคู่มือแยกกลุ่มโฆษณา · กลุ่มแบตเตอรี่ที่เปิดแล้ว CTR 1.42% ควรเช็กว่าหน้าปลายทางเป็นหน้าหมวดแบตเตอรี่แล้วหรือยัง</p>
+      </details>
     </div>
-    <div class="ditem">
-      <div>
-        <div class="q">3.2 ลิงก์ไม่มี UTM และยังไม่ตรวจ GA4 / Meta Pixel บน ateliercorp.co</div>
-        <p>ค้างมาจากสัปดาห์ก่อน · โพสต์ “ใครมันจะเถียงกันทุกวัน” ส่งคนเข้าเว็บ 902 คน ที่ ฿0.75 ต่อคน ถูกที่สุดในทุกช่องทาง</p>
-        <p><span class="lb">ผลกระทบ:</span> ช่องทางที่ถูกที่สุดกลับเป็นช่องทางที่พิสูจน์ยอดขายไม่ได้ — ฿2,000.41 ต่อสัปดาห์</p>
-      </div>
-      <div>
-        <p><span class="lb">วิธีแก้:</span> ใส่ UTM รายโพสต์ทั้ง 3 ชุด · ตรวจ GA4 และ Meta Pixel บน ateliercorp.co โดยเฉพาะหน้าสินค้า Galatea ที่เป็นปลายทางของโพสต์ที่ดีที่สุด</p>
-        <p><span class="own">ทีมเว็บไซต์</span> <span class="own">ทีมโฆษณา</span></p>
-      </div>
+    <div class="ck">
+      <input type="checkbox" id="ck6" data-id="w2-6">
+      <label class="bx" for="ck6"><span class="sr">ทำแล้ว</span></label>
+      <label class="ct" for="ck6"><span class="cc"><i style="background:var(--wpc)"></i>Google Ads</span><span class="t">แก้ Conversion tracking ให้ครบ</span><span class="d">ตั้ง Conversion หลักเป็นการโทร · กดแผนที่ · ขอใบเสนอราคา</span></label>
+      <span class="cm"><span class="ml">สัปดาห์หน้าดู</span>นับ Conversion ได้ถูกต้อง<span class="mn">ตอนนี้ตั้งค่าไม่สมบูรณ์</span></span>
+      <details class="why"><summary>ดูเหตุผล</summary>
+        <p><span class="lb">ผลกระทบ:</span> สัปดาห์นี้นับได้ 1 Conversion (22 ก.ย.) แต่รายการ “การซื้อ” และ “หยิบใส่รถเข็น” ยังตั้งค่าไม่ถูก จึงใช้ตัวเลขนี้ตัดสินใจไม่ได้ · ถ้าอนาคตเปลี่ยนไปประมูลแบบเน้น Conversion ระบบจะเรียนรู้จากข้อมูลผิด</p>
+        <p><span class="lb">วิธีทำ:</span> ตรวจโค้ดติดตามบนหน้าสำคัญ แล้วตั้ง Conversion หลักให้ตรงธุรกิจ คือการโทร การกดแผนที่ และการขอใบเสนอราคา · ระหว่างนี้คงกลยุทธ์ Maximize clicks ไว้ก่อน</p>
+      </details>
     </div>
-  </div>
-
-  <div class="dcard" id="c-wpc" role="tabpanel" hidden>
-    <div class="dch" style="background:var(--wpc)"><span class="t">4 · Google Ads · Website WPC</span><span class="m">2 เรื่อง · ค่าโฆษณาสัปดาห์นี้ ฿1,770.80</span></div>
-    <div class="ditem">
-      <div>
-        <div class="q">4.1 แยกกลุ่มโฆษณาอีก 3 กลุ่มที่เหลือ</div>
-        <p>ทำไปแล้ว 2 จาก 5 กลุ่ม (ทั่วไป · แบตเตอรี่) · คำที่มีชื่อย่านร้านได้ CTR 11–15% ยังรวมอยู่ในกลุ่มทั่วไป และทุกคำยังชี้ไปหน้าเดียวกัน</p>
-        <p><span class="lb">ผลกระทบ:</span> คำกลุ่มวรจักรและร้าน/ใกล้ฉันใช้งบรวมราว ฿780 ต่อสัปดาห์ (44%) โดยยังไม่มีโฆษณาและหน้าปลายทางเฉพาะกลุ่ม</p>
-      </div>
-      <div>
-        <p><span class="lb">วิธีแก้:</span> เปิดกลุ่ม <b>วรจักร</b> และ <b>ร้าน/ใกล้ฉัน</b> ก่อน เพราะใช้งบมากที่สุด แล้วตามด้วยกลุ่มยี่ห้อ-รุ่น ตามคู่มือ <i>google-ads-wpc-adgroup-split-howto</i> · กลุ่มแบตเตอรี่ CTR 1.42% ควรเช็กว่าหน้าปลายทางเป็นหน้าหมวดแบตเตอรี่แล้วหรือยัง</p>
-        <p><span class="own">ทีมโฆษณา</span></p>
-      </div>
-    </div>
-    <div class="ditem">
-      <div>
-        <div class="q">4.2 Conversion tracking ตั้งค่าไม่สมบูรณ์</div>
-        <p>ค้างมาจากสัปดาห์ก่อน · สัปดาห์นี้นับได้ 1 Conversion (22 ก.ย.) แต่รายการ “การซื้อ” และ “หยิบใส่รถเข็น” ยังตั้งค่าไม่ถูก</p>
-        <p><span class="lb">ผลกระทบ:</span> ใช้ตัวเลข Conversion ตัดสินใจไม่ได้ · ถ้าอนาคตจะเปลี่ยนกลยุทธ์ประมูลเป็นแบบเน้น Conversion ระบบจะเรียนรู้จากข้อมูลผิด</p>
-      </div>
-      <div>
-        <p><span class="lb">วิธีแก้:</span> ตรวจโค้ดติดตามบนหน้าสำคัญ แล้วตั้ง Conversion หลักให้ตรงธุรกิจ — การโทร การกดแผนที่ และการขอใบเสนอราคา · ระหว่างนี้คงกลยุทธ์ “Maximize clicks” ไว้ก่อน</p>
-        <p><span class="own">ทีมเว็บไซต์</span></p>
-      </div>
-    </div>
-  </div>
+  <p class="clnote">การติ๊กจะจำไว้ในเบราว์เซอร์ของเครื่องที่กดเท่านั้น คนอื่นที่เปิดลิงก์จะไม่เห็น</p>
 </section>
 
 <footer>
@@ -628,22 +607,25 @@ document.querySelectorAll('.more').forEach(function(btn){
 });
 
 (function(){
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.dtab'));
-  var cards = ['c-shopee','c-iglk','c-igat','c-wpc'].map(function(id){return document.getElementById(id);});
-  function show(btn){
-    var ids = btn.getAttribute('aria-controls').split(' ');
-    tabs.forEach(function(t){ t.setAttribute('aria-selected', t === btn ? 'true' : 'false'); });
-    cards.forEach(function(c){ c.hidden = ids.indexOf(c.id) === -1; });
+  var KEY='ads-checklist-2569-09-w2';
+  var boxes=Array.prototype.slice.call(document.querySelectorAll('.ck input'));
+  var st={};
+  try{ st=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ st={}; }
+  function paint(){
+    var n=0;
+    boxes.forEach(function(b){ b.closest('.ck').classList.toggle('done',b.checked); if(b.checked)n++; });
+    document.getElementById('ckn').textContent=n;
+    document.getElementById('ckbar').style.width=(n/boxes.length*100)+'%';
   }
-  tabs.forEach(function(btn, i){
-    btn.addEventListener('click', function(){ show(btn); });
-    btn.addEventListener('keydown', function(e){
-      var n = null;
-      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
-      if (e.key === 'ArrowLeft')  n = tabs[(i - 1 + tabs.length) % tabs.length];
-      if (n) { e.preventDefault(); n.focus(); show(n); }
+  boxes.forEach(function(b){
+    b.checked=!!st[b.dataset.id];
+    b.addEventListener('change',function(){
+      st[b.dataset.id]=b.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(st)); }catch(e){}
+      paint();
     });
   });
+  paint();
 })();
 </script>
 </body>
